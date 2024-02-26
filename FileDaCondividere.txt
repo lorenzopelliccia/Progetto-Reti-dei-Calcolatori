@@ -1,0 +1,25 @@
+Traccia progetto
+Progettare una rete P2P con protocollo TCP che simula lo scambio file utilizzata da torrent.
+
+Ci sono n peers (n > 2) che mettono a disposizione un file di testo (tutti i peers hanno lo stesso file) nel momento in cui un nuovo peers entra nella rete e richiede il file questo deve essere inviato da tutti i peers che hanno a disposizione quel file. Ogni peers invia una sottoporzione del file, per semplicità è necessario dividere la lunghezza del file per il numero di peers che hanno il file.
+
+Gruppo con 1 persona:
+
+I peers sono ordinati in base ad un id sequenziale, ed in base a questo invia la sua sottoporzione di file
+
+Es.
+
+3 peers hanno il file
+I peers avranno id: 1, 2, 3
+La dimensione del file viene divisa per 3 arrotondando il numero di bytes da trasmettere
+filesize 1024mb / 3 = 341,33
+Peer 1 invia 341 bytes
+Peer 2 invia 341 bytes 
+Peer 3 invia 342 bytes
+Gruppo con 2 persone:
+
+Aggiungere un server tracker che invia la lista dei peers che hanno il file
+
+Gruppo con 3 persone:
+
+Il tracker dovrà decidere quale sottoporzione di file deve essere recuperata da ogni peer ed inviare l'informazione al peer richiedente che richiederà quella specifica porzione agli altri peers
